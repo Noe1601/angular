@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Profesor</h4>
+                <h6 class="card-subtitle">Informacion</h6>
+                <form class="form p-t-20" (submit)="crearProfesor()" [formGroup]="profesorForm">
+
+                    <div class="form-group">
+                        <label for="exampleInputuname">Nombre</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" formControlName="nombre" id="exampleInputuname" placeholder="Nombre del profesor">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputuname">Edad</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" formControlName="edad" id="exampleInputuname" placeholder="Edad del profesor">
+                        </div>
+                    </div>
+
+                    <button [disabled]="profesorForm?.invalid" type="submit" class="btn btn-success waves-effect waves-light m-r-10">
+                        <i class="fa fa-save"></i>
+                        Guardar cambios
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

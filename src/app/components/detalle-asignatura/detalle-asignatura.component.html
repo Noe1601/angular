@@ -1,0 +1,60 @@
+<div class="row animated fadeIn fast" *ngIf="cargando">
+    <div class="col-12">
+        <div class="alert alert-success text-center" role="alert">
+            <h4 class="alert-heading">Cargando</h4>
+            <i class="fa fa-spin fa-refresh fa-2x"></i>
+            <p class="mb-0">Por favor espere...</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="row animated fadeIn fast" *ngIf="!cargando">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="col">
+                    <div class="text-right">
+                        <button (click)="abrirModal()" class="btn btn-primary">
+                            <i class="fa fa-plus"></i> 
+                            Crear estudiante
+                        </button>
+                    </div>
+                </div>
+
+                <!-- <h4 class="card-title">Asignatura: {{relacionData.ASIGNATURA}} </h4> -->
+                <h4 class="card-title">Total de estudiantes ({{relacionData.length}}) </h4>
+                <h6 class="card-subtitle">Estudiantes registrados</h6>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th># identificacion</th>
+                                <th>Nombre</th>
+                                <th class="text-nowrap w100">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let relacion of relacionData">
+                                <td> {{ relacion.ID_ESTUDIANTE }} </td>
+                                <td> {{ relacion.NOMBRE_ESTUDIANTE }} </td>
+                                <td class="text-nowrap text-center">
+                                    <button class="btn btn-primary" [routerLink]="['/component/actualizarEstudiante', relacion.ID_ESTUDIANTE]">Editar</button>
+                                    <button class="btn btn-danger" (click)="eliminarEstudiante(relacion.ID_ESTUDIANTE)">Eliminar</button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- <div>
+                    <button class="btn btn-secondary">Anteriores</button> &nbsp;
+                    <button class="btn btn-secondary">Siguiente</button>
+                </div> -->
+
+            </div>
+        </div>
+    </div>
+</div>

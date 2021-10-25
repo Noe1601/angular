@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="login-container">
+        <div class="register">
+            <h2>Login</h2>
+            <form (submit)="login()" [formGroup]="loginForm">
+
+                <div class="form-group">
+                    <label for="exampleInputuname">Correo electronico</label>
+                    <div class="input-group">
+                        <input type="email" class="form-control" formControlName="correo" id="exampleInputuname" placeholder="Ingrese su correo">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputuname">Contraseña</label>
+                    <div class="input-group">
+                        <input autocomplete="off" type="password" class="form-control" formControlName="password" id="exampleInputuname" placeholder="Ingrese su Contraseña">
+                    </div>
+                </div>
+
+
+                <button [disabled]="loginForm?.invalid" type="submit" class="btn btn-success btn-block">
+                    Ingresar
+                </button>
+                <br><br>
+                <a class="mt-5" routerLink="/registro">Registrarme</a>
+            </form>
+        </div>
+    </div>
+</div>

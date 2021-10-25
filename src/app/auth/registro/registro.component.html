@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="login-container">
+        <div class="register">
+            <h2>Registrarse</h2>
+            <form (submit)="crearUsuario()" [formGroup]="registroForm">
+
+                <div class="form-group">
+                    <label for="exampleInputuname">Correo electronico</label>
+                    <div class="input-group">
+                        <input type="email" class="form-control" formControlName="correo" id="exampleInputuname" placeholder="Ingrese su correo">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputuname">Nombre</label>
+                    <div class="input-group">
+                        <input autocomplete="off" type="text" class="form-control" formControlName="nombre" id="exampleInputuname" placeholder="Ingrese su nombre">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputuname">Contraseña</label>
+                    <div class="input-group">
+                        <input autocomplete="off" type="password" class="form-control" formControlName="password" id="exampleInputuname" placeholder="Ingrese su Contraseña">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputuname">Rol</label>
+                    <div class="input-group">
+                        <select id="cars" class="form-control" formControlName="rol">
+                            <option value="ADMIN_ROLE">ADMIN</option>
+                            <option value="USER_ROLE">USER</option>
+                          </select>
+                    </div>
+                </div>
+
+
+                <button [disabled]="registroForm?.invalid" type="submit" class="btn btn-success btn-block">
+                    Registrarse
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
